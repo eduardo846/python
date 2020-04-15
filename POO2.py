@@ -1,21 +1,41 @@
 class Coche():
     def __init__(self):
-        self.largoChasis=250
-        self.anchoChasis=120
+        self.__largoChasis=250
+        self.__anchoChasis=120
         self.__ruedas=4 #encapsular la variable no permite modificarla 
-        self.enmarcha=False
+        self.__enmarcha=False
 
     def arrancar(self,arrancamos):
-        self.enmarcha=arrancamos
-        if (self.enmarcha):
+        self.__enmarcha=arrancamos
+
+        if (self.__enmarcha):
+            chequeo=self.chequeo_interno()
+
+
+        if (self.__enmarcha and chequeo):
             return "El coche esta en marcha"
+
+        elif(self.__enmarcha and chequeo==False):
+            return "Algo ha ido mal en el chequeo no podemos arrancar"
+
         else:
             return "El coche esta parado"
         
     def estado(self):
-        print("El coche tiene: ",self.__ruedas, "ruedas. Un ancho de ",self.anchoChasis," y un largo de ",
-        self.largoChasis)
-        
+        print("El coche tiene: ",self.__ruedas, "ruedas. Un ancho de ",self.__anchoChasis," y un largo de ",
+        self.__largoChasis)
+    
+    def chequeo_interno(self):
+        print("Realizando chequeo interno")
+
+        self.gasolina="OK"
+        self.aceite="OK"
+        self.puertas="OK"
+
+        if (self.gasolina=="OK" and self.aceite=="OK" and self.puertas=="OK"):
+            return True
+        else:
+            return False
 
 
 miCoche=Coche()
