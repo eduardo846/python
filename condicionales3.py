@@ -1,3 +1,4 @@
+#Condicionales 3
 salario_presidente=int(input("Introduce el salario del presidente "))
 print("Salario presidente: "+str(salario_presidente))
 
