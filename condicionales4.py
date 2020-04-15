@@ -1,3 +1,4 @@
+#Condicionales 4
 print("Programas de becas a;o 2017")
 distacia_escuela=int(input("Introduce la distancia a la escuela en km "))
 print(distacia_escuela)
